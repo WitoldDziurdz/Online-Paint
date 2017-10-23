@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.ColorPicker?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="300.0" />
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints maxWidth="130.0" minWidth="10.0" prefWidth="95.0" />
+      <ColumnConstraints maxWidth="114.0" minWidth="10.0" prefWidth="108.0" />
+      <ColumnConstraints maxWidth="97.0" minWidth="10.0" prefWidth="97.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+   <children>
+      <Button mnemonicParsing="false" onAction="#handleDownSizePen" text="Up Size" />
+      <Button mnemonicParsing="false" onAction="#handleUpSizePen" text="down Size" GridPane.columnIndex="1" />
+      <Button mnemonicParsing="false" text="Connect"  onAction="#handlerFormConnectToServer" GridPane.columnIndex="2" />
+      <Canvas fx:id="board" height="300" onMouseDragged="#handleMouseDragged" onMouseReleased="#handleMouseRealised" width="430.0" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+      <ColorPicker fx:id="penColor"  GridPane.columnIndex="3" />
+   </children>
+
+</GridPane>
