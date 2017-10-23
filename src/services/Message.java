@@ -2,13 +2,12 @@ package services;
 
 import sharps.Line;
 import sharps.Sharp;
-
 import java.io.Serializable;
 
 
 public class Message implements Serializable {
     private TypeMessage type;
-    private Line data;
+    private Sharp data;
     private String name;
 
     public Message(TypeMessage type) {
@@ -23,7 +22,7 @@ public class Message implements Serializable {
         this.data = null;
     }
 
-    public Message(String name, TypeMessage type, Line data) {
+    public Message(String name, TypeMessage type, Sharp data) {
         this.name = name;
         this.type = type;
         this.data = data;
@@ -33,7 +32,7 @@ public class Message implements Serializable {
         return type;
     }
 
-    public Line getData() {
+    public Sharp getData() {
         return data;
     }
 

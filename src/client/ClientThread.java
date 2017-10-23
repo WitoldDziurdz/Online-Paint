@@ -1,13 +1,10 @@
 package client;
 
 
-import javafx.scene.paint.Color;
 import services.Connection;
 import services.ConsoleHelper;
 import services.Message;
 import services.TypeMessage;
-import sharps.Line;
-
 
 import java.io.IOException;
 import java.net.Socket;
@@ -91,7 +88,7 @@ public class ClientThread implements Runnable{
                      Message message = connection.receive();
                      TypeMessage type = message.getType();
                      if(type == TypeMessage.DATA){
-                         controller.drawSharp( message.getData());
+                         controller.drawSharp(message.getData());
                      }else {
                          throw new IOException("Unexpected MessageType");
                      }

@@ -1,17 +1,15 @@
 package server;
 
-import services.Connection;
+
 import services.ConsoleHelper;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+
 
 public class Server {
     private static int port = 4040;
-    private static Map<Integer, Connection> connections = new ConcurrentHashMap<Integer, Connection>();
 
     public static void main(String[] args) {
         ServerSocket serverSocket = null;

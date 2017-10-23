@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sharps.Line;
+import sharps.Sharp;
 
 import java.io.IOException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -21,7 +22,7 @@ import static javafx.stage.Modality.APPLICATION_MODAL;
 
 
 public class Controller {
-    public  BlockingQueue<Line> sharpToSend = new ArrayBlockingQueue<Line>(100000);
+    public  BlockingQueue<Sharp> sharpToSend = new ArrayBlockingQueue<Sharp>(100000);
 
     private  double sizeLine = 1;
     private  double startX = 0;
@@ -53,9 +54,9 @@ public class Controller {
         }
     }
 
-    public  synchronized void drawSharp(Line line){
+    public  synchronized void drawSharp(Sharp sharp){
         GraphicsContext gc = board.getGraphicsContext2D();
-        line.draw(gc);
+        sharp.draw(gc);
     }
 
     public void handleMouseDragged(MouseEvent mouseEvent) {
