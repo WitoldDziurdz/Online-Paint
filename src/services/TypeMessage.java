@@ -5,5 +5,4 @@ public enum TypeMessage {
     USER_NAME,
     NAME_ACCEPTED,
     DATA,
-
 }

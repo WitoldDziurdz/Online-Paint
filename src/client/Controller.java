@@ -11,6 +11,7 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import sharps.Clear;
 import sharps.Line;
 import sharps.Sharp;
 
@@ -46,9 +47,9 @@ public class Controller {
     }
 
 
-    private void addToSend(Line line){
+    private void addToSend(Sharp sharp){
         try {
-            sharpToSend.put(line);
+            sharpToSend.put(sharp);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -98,5 +99,9 @@ public class Controller {
     public void connectToServer( String ip, int port,String name){
         ClientThread clientThread = new ClientThread(this,ip,port,name);
         new Thread(clientThread).start();
+    }
+
+    public void handlerClearCanvas(ActionEvent event) {
+        addToSend(new Clear());
     }
 }
