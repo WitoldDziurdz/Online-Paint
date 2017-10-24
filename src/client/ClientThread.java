@@ -1,6 +1,7 @@
 package client;
 
 
+import client.controllers.MainController;
 import services.Connection;
 import services.ConsoleHelper;
 import services.Message;
@@ -13,12 +14,12 @@ public class ClientThread implements Runnable{
     private volatile boolean clientConnected = false;
     private Socket socket;
     private String name;
-    private Controller controller;
-    public ClientThread(Controller controller, String ip, int port, String name) {
+    private MainController mainController;
+    public ClientThread(MainController mainController, String ip, int port, String name) {
         try {
             this.socket = new Socket(ip,port);
             this.name = name;
-            this.controller = controller;
+            this.mainController = mainController;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,7 +43,7 @@ public class ClientThread implements Runnable{
     private void sendMainLoopMessage(Connection connection){
         while (clientConnected){
             try {
-                Message message = new Message(name, TypeMessage.DATA,controller.sharpToSend.take());
+                Message message = new Message(name, TypeMessage.DATA, mainController.sharpToSend.take());
                 if(!clientConnected) break;
                 connection.send(message);
             }catch (IOException e) {
@@ -88,7 +89,7 @@ public class ClientThread implements Runnable{
                      Message message = connection.receive();
                      TypeMessage type = message.getType();
                      if(type == TypeMessage.DATA){
-                         controller.drawSharp(message.getData());
+                         mainController.drawSharp(message.getData());
                      }else {
                          throw new IOException("Unexpected MessageType");
                      }

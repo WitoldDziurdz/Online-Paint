@@ -1,5 +1,6 @@
-package client;
+package client.controllers;
 
+import client.ClientThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,7 @@ import java.util.concurrent.BlockingQueue;
 import static javafx.stage.Modality.APPLICATION_MODAL;
 
 
-public class Controller {
+public class MainController {
     public  BlockingQueue<Sharp> sharpToSend = new ArrayBlockingQueue<Sharp>(100000);
 
     private  double sizeLine = 1;
@@ -82,7 +83,7 @@ public class Controller {
     }
 
     public void handlerFormConnectToServer(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("connection.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("views/connection.fxml"));
         Parent parent = loader.load();
         ConnectionController controller = loader.getController();
         controller.setMainController(this);

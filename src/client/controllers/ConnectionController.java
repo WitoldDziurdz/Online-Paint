@@ -1,4 +1,4 @@
-package client;
+package client.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ConnectionController {
-    private  Controller controller;
+    private MainController mainController;
     private Stage stage;
 
     @FXML
@@ -65,7 +65,7 @@ public class ConnectionController {
         String name = getName();
         String ip = getIp();
         int port = getPort();
-        controller.connectToServer(ip, port, name);
+        mainController.connectToServer(ip, port, name);
         stage.close();
     }
 
@@ -73,8 +73,8 @@ public class ConnectionController {
         stage.close();
     }
 
-    public void setMainController(Controller controller){
-        this.controller = controller;
+    public void setMainController(MainController mainController){
+        this.mainController = mainController;
     }
 
     public void setStage( Stage stage){

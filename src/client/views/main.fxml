@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.scene.control.ColorPicker?>
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.Controller">
+<GridPane alignment="center" prefHeight="400.0" prefWidth="500.0" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.MainController">
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="30.0" />
         <RowConstraints minHeight="10.0" prefHeight="30.0" />

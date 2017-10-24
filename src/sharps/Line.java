@@ -5,10 +5,8 @@ import javafx.scene.paint.Color;
 
 
 public class Line extends Point{
-
     protected double finishX;
     protected double finishY;
-
 
     public Line(Color color, double sizeLine, double startX, double startY,double finishX, double finishY) {
         super(color,sizeLine,startX,startY);
@@ -23,7 +21,6 @@ public class Line extends Point{
         gc.setLineWidth(sizeLine);
         gc.strokeLine(startX, startY, finishX,finishY);
     }
-
 
     protected Color getColor(){
         return  new Color(red,green,blue,opacity);
